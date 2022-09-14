@@ -14,6 +14,8 @@ public class PokerHands {
             whiteFrequency.merge(card.value, 1, Integer::sum);
         }
 
+
+//        --- Pair ---
         if (whiteFrequency.containsValue(2) && blackFrequency.containsValue(2)){
             Value blackHighPair = Value.TWO;
             Value whiteHighPair = Value.TWO;
@@ -34,14 +36,16 @@ public class PokerHands {
             } else {
                 return "Black";
             }
-
         }
+
         if (whiteFrequency.containsValue(2)){
             return "Black";
         }if (blackFrequency.containsValue(2)){
             return "Black";
         }
 
+
+//        --- HighCard ---
         Card blackHigh = new Card(Value.TWO, Suit.ACE);
         Card whiteHigh = new Card(Value.TWO, Suit.ACE);
 
@@ -53,8 +57,9 @@ public class PokerHands {
         }
 
         if (blackHigh.value.compareTo(whiteHigh.value) > 0) return "Black";
-        else return "White";
+        else if (blackHigh.value.compareTo(whiteHigh.value) < 0)return "White";
 
+        return "Tie";
     }
 
 
