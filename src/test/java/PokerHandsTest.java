@@ -124,7 +124,7 @@ public class PokerHandsTest {
                 new Card(Value.TEN, Suit.DIAMONDS),
         };
 
-        assertEquals("Black wins. - with three of a kind card: TEN", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("White wins. - with three of a kind card: TEN", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
 }

@@ -15,7 +15,39 @@ public class PokerHands {
             whiteFrequency.merge(card.value, 1, Integer::sum);
         }
 
-//        --- TwoPair ---
+//        --- Three of a kind ---
+        if (whiteFrequency.containsValue(3)||blackFrequency.containsValue(3)){
+            Value blackThree = Value.TWO;
+            Value whiteThree = Value.TWO;
+
+
+
+            for (Map.Entry<Value, Integer> freq : blackFrequency.entrySet()) {
+                if (freq.getValue() == 3 && freq.getKey().compareTo(blackThree) > 0){
+                    blackThree = freq.getKey();
+                }
+            }
+
+            for (Map.Entry<Value, Integer> freq : whiteFrequency.entrySet()) {
+                if (freq.getValue() == 3 && freq.getKey().compareTo(whiteThree) > 0){
+                    whiteThree = freq.getKey();
+                }
+            }
+
+            if (blackFrequency.containsValue(3) && whiteFrequency.containsValue(3)){
+                if (blackThree.compareTo(whiteThree) > 0){
+                    return "Black wins. - with three of a kind card: " + blackThree;
+                } else if (whiteThree.compareTo(blackThree) > 0) {
+                    return "White wins. - with three of a kind card: " + whiteThree;
+                }
+            }
+            else if(blackFrequency.containsValue(3)||!whiteFrequency.containsValue(3)){
+                return "Black wins. - with three of a kind card: " + blackThree;
+            }
+            else if(whiteFrequency.containsValue(3)||!blackFrequency.containsValue(3)){
+                return "White wins. - with three of a kind card: " + whiteThree;
+            }
+        }
 
 
 
