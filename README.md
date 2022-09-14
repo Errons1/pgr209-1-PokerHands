@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/kristiania-pgr209-2022/pgr209-1-Errons1/actions/workflows/maven.yml/badge.svg)](https://github.com/kristiania-pgr209-2022/pgr209-1-Errons1/actions/workflows/maven.yml)
+
 # Innlevering 1: Programmeringsferdigheter
 
 ## Oppgave
@@ -26,26 +28,26 @@ Når dere oppretter repository via Github Classroom linken på Canvas, vil det a
 * Innlevering
   * [ ] Begge har levert link til Github Repository i Canvas
   * [ ] Dere har lastet opp zip-fil på Canvas
-  * [ ] Koden er sjekket inn på et repository på https://github.com/kristiania-pgr209-2021
-  * [ ] GitHub repository er private. Dere skal gi tilgang til de som gir code review
+  * [x] Koden er sjekket inn på et repository på https://github.com/kristiania-pgr209-2021
+  * [x] GitHub repository er private. Dere skal gi tilgang til de som gir code review
 * Github
   * [ ] Dere har en Git branch som viser parprogrammering der dere sjekker inn annenhver gang
   * [ ] Dere har merget pull en pull request fra ping-pong-branchen
   * [ ] Dere har mottatt code review fra medstudenter på feedback-pull request
-  * [ ] `.idea`, `*.iml` og `target` er lagt til i .gitignore og ikke sjekket inn
-  * [ ] Github Actions rapporterer at 100% av testene kjører grønt
+  * [x] `.idea`, `*.iml` og `target` er lagt til i .gitignore og ikke sjekket inn
+  * [x] Github Actions rapporterer at 100% av testene kjører grønt
   * [ ] GitHub Actions skal ha `timeout` på bygget
   * [ ] Dere har opprettet og resolved GitHub issues med link til commits
 * Kode
-  * [ ] Koden skal være korrekt strukturert etter Maven sine standarder (koden skal ligge under `src/main/java` og tester under `src/test/java`)
-  * [ ] Klassene skal ligge i Java packages
+  * [x] Koden skal være korrekt strukturert etter Maven sine standarder (koden skal ligge under `src/main/java` og tester under `src/test/java`)
+  * [x] Klassene skal ligge i Java packages
   * [ ] Koden inneholder en testklasse med 4-7 testmetoder
   * [ ] Klassenavn, pakkenavn, metodenavn og variabelnavn skal følge Java-konvensjoner når det gjelder små og store bokstaver
   * [ ] Koden skal være korrekt indentert
   * [ ] Dersom dere har valgt en stor oppgave behøver dere ikke løse hele. 6-7 tester er tilstrekkelig
 * README-fil
   * [ ] Link til video av parprogrammering
-  * [ ] Korrekt GitHub Actions status badge
+  * [x] Korrekt GitHub Actions status badge
   * [ ] Link til code review dere har gjort for medstudenter med minst én issue fra hver av dere
 * Video av parprogrammering viser:
   * [ ] Den som skriver en test gir koden til den andre for å få testen til å passere
