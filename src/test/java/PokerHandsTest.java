@@ -10,12 +10,12 @@ public class PokerHandsTest {
     void highCardTest(){
         PokerHands pokerHands = new PokerHands();
 
-        HashMap<Cards, Integer> blackHand = new HashMap<>();
-        HashMap<Cards, Integer> whiteHand = new HashMap<>();
+        Card[] blackHand = new Card[1];
+        Card[] whiteHand = new Card[1];
 
-        blackHand.put(Cards.THREE, 1);
-        whiteHand.put(Cards.TWO, 1);
+        blackHand[0] = new Card(Value.THREE, Suit.ACE);
+        whiteHand[0] = new Card(Value.TWO, Suit.ACE);
 
-        assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("Black", pokerHands.checkWinner(blackHand, whiteHand));
     }
 }
