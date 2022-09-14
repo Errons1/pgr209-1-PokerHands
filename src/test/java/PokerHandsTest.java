@@ -14,7 +14,7 @@ public class PokerHandsTest {
         blackHand[0] = new Card(Value.THREE, Suit.ACE);
         whiteHand[0] = new Card(Value.TWO, Suit.ACE);
 
-        assertEquals("Black", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("Black wins. - with high card: THREE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -36,7 +36,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("White wins. - with high card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("Black", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("Black wins. - with pair card: TWO", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -80,7 +80,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("White wins. - with pair card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -102,7 +102,7 @@ public class PokerHandsTest {
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
 
-        assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
+        assertEquals("White wins. - with pair card: FOUR", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
 }
