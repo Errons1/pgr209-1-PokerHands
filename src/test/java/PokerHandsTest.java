@@ -61,4 +61,26 @@ public class PokerHandsTest {
         assertEquals("Black", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
+    @Test
+    void bothHavePairTest() {
+        PokerHands pokerHands = new PokerHands();
+
+        Card[] blackHand = {
+                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.THREE, Suit.DIAMONDS),
+                new Card(Value.FOUR, Suit.HEART),
+                new Card(Value.TWO, Suit.CLUBS),
+                new Card(Value.SIX, Suit.DIAMONDS),
+        };
+        Card[] whiteHand = {
+                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.THREE, Suit.DIAMONDS),
+                new Card(Value.FOUR, Suit.HEART),
+                new Card(Value.NINE, Suit.CLUBS),
+                new Card(Value.NINE, Suit.DIAMONDS),
+        };
+
+        assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
+    }
+
 }
