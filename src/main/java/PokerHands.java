@@ -4,25 +4,14 @@ import java.util.Map;
 public class PokerHands {
 
     public String checkWinner(Card[] blackHand, Card[] whiteHand) {
-        Card blackHigh = new Card(Value.TWO, Suit.ACE);
-        Card whiteHigh = new Card(Value.TWO, Suit.ACE);
-
         HashMap<Value, Integer> blackFrequency = new HashMap<>();
         HashMap<Value, Integer> whiteFrequency = new HashMap<>();
 
         for (Card card : blackHand) {
-            if (blackFrequency.get(card.value) != null){
-                blackFrequency.put(card.value, blackFrequency.get(card.value) + 1);
-            } else {
-                blackFrequency.put(card.value, 1);
-            }
+            blackFrequency.merge(card.value, 1, Integer::sum);
         }
         for (Card card : whiteHand) {
-            if (whiteFrequency.get(card.value) != null){
-                whiteFrequency.put(card.value, whiteFrequency.get(card.value) + 1);
-            } else {
-                whiteFrequency.put(card.value, 1);
-            }
+            whiteFrequency.merge(card.value, 1, Integer::sum);
         }
 
         if (whiteFrequency.containsValue(2) && blackFrequency.containsValue(2)){
@@ -52,6 +41,9 @@ public class PokerHands {
         }if (blackFrequency.containsValue(2)){
             return "Black";
         }
+
+        Card blackHigh = new Card(Value.TWO, Suit.ACE);
+        Card whiteHigh = new Card(Value.TWO, Suit.ACE);
 
         for (Card card : blackHand){
             if (card.value.compareTo(blackHigh.value) > 0) blackHigh.value = card.value;
