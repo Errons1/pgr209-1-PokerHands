@@ -83,8 +83,8 @@ public class PokerHands {
 
 
 //        --- HighCard ---
-        Card blackHigh = new Card(Value.TWO, Suit.ACE);
-        Card whiteHigh = new Card(Value.TWO, Suit.ACE);
+        Card blackHigh = new Card(Value.TWO, Suit.SPADES);
+        Card whiteHigh = new Card(Value.TWO, Suit.SPADES);
 
         for (Card card : blackHand){
             if (card.value.compareTo(blackHigh.value) > 0) blackHigh.value = card.value;

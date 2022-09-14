@@ -11,8 +11,8 @@ public class PokerHandsTest {
         Card[] blackHand = new Card[1];
         Card[] whiteHand = new Card[1];
 
-        blackHand[0] = new Card(Value.THREE, Suit.ACE);
-        whiteHand[0] = new Card(Value.TWO, Suit.ACE);
+        blackHand[0] = new Card(Value.THREE, Suit.SPADES);
+        whiteHand[0] = new Card(Value.TWO, Suit.SPADES);
 
         assertEquals("Black wins. - with high card: THREE", pokerHands.checkWinner(blackHand, whiteHand));
     }
@@ -22,14 +22,14 @@ public class PokerHandsTest {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.SEVEN, Suit.CLUBS),
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
         Card[] whiteHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.EIGHT, Suit.CLUBS),
@@ -44,14 +44,14 @@ public class PokerHandsTest {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.TWO, Suit.CLUBS),
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
         Card[] whiteHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.EIGHT, Suit.CLUBS),
@@ -66,14 +66,14 @@ public class PokerHandsTest {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.TWO, Suit.CLUBS),
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
         Card[] whiteHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.NINE, Suit.CLUBS),
@@ -88,14 +88,14 @@ public class PokerHandsTest {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.THREE, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.EIGHT, Suit.CLUBS),
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
         Card[] whiteHand = {
-                new Card(Value.TWO, Suit.ACE),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.FOUR, Suit.DIAMONDS),
                 new Card(Value.FOUR, Suit.HEART),
                 new Card(Value.TWO, Suit.CLUBS),
