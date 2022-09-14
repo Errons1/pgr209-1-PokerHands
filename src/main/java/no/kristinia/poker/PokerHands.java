@@ -17,12 +17,57 @@ public class PokerHands {
             whiteFrequency.merge(card.value, 1, Integer::sum);
         }
 
+
+//        --- Straight ---
+        int blackStraight = 0;
+        int whiteStraight = 0;
+        Value blackStraightHigh = Value.TWO;
+        Value whiteStraightHigh = Value.TWO;
+
+        for (Value value : Value.values()) {
+
+            if (blackFrequency.containsKey(value)) {
+                blackStraight++;
+                if (blackStraight == 5) {
+                    blackStraightHigh =  value;
+                }
+
+            } else {
+                blackStraight = 0;
+            }
+
+            if (whiteFrequency.containsKey(value)) {
+                whiteStraight++;
+                if (whiteStraight == 5) {
+                    whiteStraightHigh =  value;
+                }
+
+            } else {
+                whiteStraight = 0;
+            }
+        }
+
+        if (!blackStraightHigh.equals(Value.TWO) || !whiteStraightHigh.equals(Value.TWO)) {
+            if (blackStraightHigh.compareTo(whiteStraightHigh) > 0) {
+                return "Black wins. - with straight: " + blackStraightHigh;
+            } else if (blackStraightHigh.compareTo(whiteStraightHigh) < 0) {
+                return "White wins. - with straight: " + whiteStraightHigh;
+            }
+
+            if (!blackStraightHigh.equals(Value.TWO)) {
+                return "Black wins. - with straight: " + blackStraightHigh;
+            }
+            if (!whiteStraightHigh.equals(Value.TWO)) {
+                return "White wins. - with straight: " + whiteStraightHigh;
+            }
+        }
+
+
+
 //        --- Three of a kind ---
         if (whiteFrequency.containsValue(3)||blackFrequency.containsValue(3)){
             Value blackThree = Value.TWO;
             Value whiteThree = Value.TWO;
-
-
 
             for (Map.Entry<Value, Integer> freq : blackFrequency.entrySet()) {
                 if (freq.getValue() == 3 && freq.getKey().compareTo(blackThree) > 0){
@@ -43,10 +88,10 @@ public class PokerHands {
                     return "White wins. - with three of a kind card: " + whiteThree;
                 }
             }
-            else if(blackFrequency.containsValue(3)||!whiteFrequency.containsValue(3)){
+            else if(blackFrequency.containsValue(3)){
                 return "Black wins. - with three of a kind card: " + blackThree;
             }
-            else if(whiteFrequency.containsValue(3)||!blackFrequency.containsValue(3)){
+            else if(whiteFrequency.containsValue(3)){
                 return "White wins. - with three of a kind card: " + whiteThree;
             }
         }
