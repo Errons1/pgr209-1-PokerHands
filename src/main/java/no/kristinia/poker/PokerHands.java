@@ -22,7 +22,7 @@ public class PokerHands {
             whiteSuitFrequency.merge(card.suit, 1, Integer::sum);
         }
 //      -- Flush --
-        if (blackSuitFrequency.size() == 1 || whiteSuitFrequency.size() == 1){
+        if (blackSuitFrequency.containsValue(5) || whiteSuitFrequency.containsValue(5)){
             ArrayList<Value> blackValues = new ArrayList<>();
             ArrayList<Value> whiteValues = new ArrayList<>();
 
@@ -36,20 +36,22 @@ public class PokerHands {
             blackValues.sort(null);
             whiteValues.sort(null);
 
-            if (blackValues.get(4).compareTo(whiteValues.get(4)) > 0){
-                return "Black wins. - with flush: " + blackValues.get(4) + " " + blackSuitFrequency.keySet();
-            }
-            if (blackValues.get(4).compareTo(whiteValues.get(4)) < 0){
-                return "White wins. - with flush: " + whiteValues.get(4) + " " + whiteSuitFrequency.keySet();
-            }
-
-            /*
-            if (blackSuitFrequency.containsValue(5)){
-                return "Black wins. - with flush: " + blackSuitFrequency.keyS;
+            if (blackSuitFrequency.containsValue(5) && !whiteSuitFrequency.containsValue(5)){
+                return "Black wins. - with flush: " + blackValues.get(blackValues.size() -1)
+                        + " " + blackSuitFrequency.keySet().toArray()[0];
+            } else if (!blackSuitFrequency.containsValue(5) && whiteSuitFrequency.containsValue(5)) {
+                return "White wins. - with flush: " + whiteValues.get(whiteValues.size() -1)
+                        + " " + whiteSuitFrequency.keySet().toArray()[0];
             }
 
-             */
-
+            if (blackValues.get(blackValues.size() -1).compareTo(whiteValues.get(whiteValues.size() -1)) > 0){
+                return "Black wins. - with flush: " + blackValues.get(blackValues.size() -1)
+                        + " " + blackSuitFrequency.keySet().toArray()[0];
+            }
+            if (blackValues.get(blackValues.size() -1).compareTo(whiteValues.get(whiteValues.size() -1)) < 0){
+                return "White wins. - with flush: " + whiteValues.get(whiteValues.size() -1)
+                        + " " + whiteSuitFrequency.keySet().toArray()[0];
+            }
         }
 
 
