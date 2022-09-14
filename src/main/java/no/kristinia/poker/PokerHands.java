@@ -18,20 +18,23 @@ public class PokerHands {
         }
 
 
+
 //        --- Straight ---
         int blackStraight = 0;
         int whiteStraight = 0;
         Value blackStraightHigh = Value.TWO;
         Value whiteStraightHigh = Value.TWO;
 
+        /*
+        *   if counter gets to five it is a straight.
+        *   saves the highest value of straight and compare to the other hand
+        * */
         for (Value value : Value.values()) {
-
             if (blackFrequency.containsKey(value)) {
                 blackStraight++;
                 if (blackStraight == 5) {
                     blackStraightHigh =  value;
                 }
-
             } else {
                 blackStraight = 0;
             }
@@ -41,7 +44,6 @@ public class PokerHands {
                 if (whiteStraight == 5) {
                     whiteStraightHigh =  value;
                 }
-
             } else {
                 whiteStraight = 0;
             }
@@ -56,8 +58,8 @@ public class PokerHands {
 
             if (!blackStraightHigh.equals(Value.TWO)) {
                 return "Black wins. - with straight: " + blackStraightHigh;
-            }
-            if (!whiteStraightHigh.equals(Value.TWO)) {
+
+            } else {
                 return "White wins. - with straight: " + whiteStraightHigh;
             }
         }
@@ -156,7 +158,6 @@ public class PokerHands {
             if (blackFrequency.containsValue(2)){
                 return "Black wins. - with pair card: " + blackPairs.get(0);
             }
-
         }
 
 
@@ -181,6 +182,5 @@ public class PokerHands {
 
         return "Tie";
     }
-
 
 }
