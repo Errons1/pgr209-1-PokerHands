@@ -1,3 +1,3 @@
 public enum Cards {
-    THREE, TWO
+    TWO, THREE,
 }

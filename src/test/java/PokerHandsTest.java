@@ -14,7 +14,6 @@ public class PokerHandsTest {
         HashMap<Cards, Integer> whiteHand = new HashMap<>();
 
         blackHand.put(Cards.THREE, 1);
-
         whiteHand.put(Cards.TWO, 1);
 
         assertEquals("White", pokerHands.checkWinner(blackHand, whiteHand));
