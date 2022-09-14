@@ -154,5 +154,26 @@ public class PokerHandsTest {
 
         Assertions.assertEquals("Black wins. - with three of a kind card: KING", pokerHands.checkWinner(blackHand, whiteHand));
     }
+    @Test
+    void oneHandHasStraightTest() {
+        PokerHands pokerHands = new PokerHands();
+
+        Card[] blackHand = {
+                new Card(Value.TWO, Suit.SPADES),
+                new Card(Value.KING, Suit.DIAMONDS),
+                new Card(Value.KING, Suit.HEART),
+                new Card(Value.KING, Suit.CLUBS),
+                new Card(Value.EIGHT, Suit.DIAMONDS),
+        };
+        Card[] whiteHand = {
+                new Card(Value.FOUR, Suit.SPADES),
+                new Card(Value.EIGHT, Suit.DIAMONDS),
+                new Card(Value.FIVE, Suit.HEART),
+                new Card(Value.SEVEN, Suit.CLUBS),
+                new Card(Value.SIX, Suit.DIAMONDS),
+        };
+
+        Assertions.assertEquals("White wins. - with straight: EIGHT", pokerHands.checkWinner(blackHand, whiteHand));
+    }
 
 }
