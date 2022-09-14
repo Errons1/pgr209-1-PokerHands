@@ -1,8 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public class PokerHands {
-
 
     public String checkWinner(Card[] blackHand, Card[] whiteHand) {
         Card blackHigh = new Card(Value.TWO, Suit.ACE);
