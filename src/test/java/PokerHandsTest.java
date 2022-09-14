@@ -105,4 +105,26 @@ public class PokerHandsTest {
         assertEquals("White wins. - with pair card: FOUR", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
+    @Test
+    void oneHandHasTreeOfAKindTest() {
+        PokerHands pokerHands = new PokerHands();
+
+        Card[] blackHand = {
+                new Card(Value.TWO, Suit.SPADES),
+                new Card(Value.KING, Suit.DIAMONDS),
+                new Card(Value.QUEEN, Suit.HEART),
+                new Card(Value.EIGHT, Suit.CLUBS),
+                new Card(Value.ACE, Suit.DIAMONDS),
+        };
+        Card[] whiteHand = {
+                new Card(Value.TWO, Suit.SPADES),
+                new Card(Value.JACK, Suit.DIAMONDS),
+                new Card(Value.TEN, Suit.HEART),
+                new Card(Value.TEN, Suit.CLUBS),
+                new Card(Value.TEN, Suit.DIAMONDS),
+        };
+
+        assertEquals("Black wins. - with three of a kind card: TEN", pokerHands.checkWinner(blackHand, whiteHand));
+    }
+
 }
