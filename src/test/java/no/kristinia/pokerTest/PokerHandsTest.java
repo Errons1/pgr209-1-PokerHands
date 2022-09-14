@@ -1,6 +1,12 @@
+package no.kristinia.pokerTest;
+
+import no.kristinia.poker.Card;
+import no.kristinia.poker.PokerHands;
+import no.kristinia.poker.Suit;
+import no.kristinia.poker.Value;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PokerHandsTest {
 
@@ -14,7 +20,7 @@ public class PokerHandsTest {
         blackHand[0] = new Card(Value.THREE, Suit.SPADES);
         whiteHand[0] = new Card(Value.TWO, Suit.SPADES);
 
-        assertEquals("Black wins. - with high card: THREE", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("Black wins. - with high card: THREE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -36,7 +42,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("White wins. - with high card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with high card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -58,7 +64,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("Black wins. - with pair card: TWO", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("Black wins. - with pair card: TWO", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -80,7 +86,7 @@ public class PokerHandsTest {
                 new Card(Value.NINE, Suit.DIAMONDS),
         };
 
-        assertEquals("White wins. - with pair card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with pair card: NINE", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -102,7 +108,7 @@ public class PokerHandsTest {
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
 
-        assertEquals("White wins. - with pair card: FOUR", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with pair card: FOUR", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test
@@ -124,7 +130,7 @@ public class PokerHandsTest {
                 new Card(Value.TEN, Suit.DIAMONDS),
         };
 
-        assertEquals("White wins. - with three of a kind card: TEN", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with three of a kind card: TEN", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
 }

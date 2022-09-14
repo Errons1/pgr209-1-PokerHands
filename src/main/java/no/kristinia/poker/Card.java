@@ -1,4 +1,6 @@
-class Card {
+package no.kristinia.poker;
+
+public class Card {
     Value value;
     Suit suit;
 
