@@ -1,9 +1,5 @@
-package no.kristinia.pokerTest;
+package no.kristiania.poker;
 
-import no.kristinia.poker.Card;
-import no.kristinia.poker.PokerHands;
-import no.kristinia.poker.Suit;
-import no.kristinia.poker.Value;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

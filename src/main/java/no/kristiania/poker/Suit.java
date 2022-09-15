@@ -1,4 +1,4 @@
-package no.kristinia.poker;
+package no.kristiania.poker;
 
 public enum Suit {
     HEART, SPADES, CLUBS, DIAMONDS,

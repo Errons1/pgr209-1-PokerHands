@@ -1,4 +1,4 @@
-package no.kristinia.poker;
+package no.kristiania.poker;
 
 public class Card {
     Value value;
