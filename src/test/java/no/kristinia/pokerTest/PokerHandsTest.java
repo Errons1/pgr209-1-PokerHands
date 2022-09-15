@@ -233,13 +233,35 @@ public class PokerHandsTest {
         };
         Card[] whiteHand = {
                 new Card(Value.FOUR, Suit.SPADES),
-                new Card(Value.EIGHT, Suit.SPADES),
+                new Card(Value.TWO, Suit.SPADES),
                 new Card(Value.EIGHT, Suit.SPADES),
                 new Card(Value.SEVEN, Suit.SPADES),
                 new Card(Value.SIX, Suit.SPADES),
         };
 
-        Assertions.assertEquals("White wins. - with flush: SPADES", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with flush: EIGHT SPADES", pokerHands.checkWinner(blackHand, whiteHand));
+    }
+
+    @Test
+    void bothHandsHasFlushTest() {
+        PokerHands pokerHands = new PokerHands();
+
+        Card[] blackHand = {
+                new Card(Value.JACK, Suit.DIAMONDS),
+                new Card(Value.ACE, Suit.DIAMONDS),
+                new Card(Value.TWO, Suit.DIAMONDS),
+                new Card(Value.QUEEN, Suit.DIAMONDS),
+                new Card(Value.TEN, Suit.DIAMONDS),
+        };
+        Card[] whiteHand = {
+                new Card(Value.FOUR, Suit.SPADES),
+                new Card(Value.TWO, Suit.SPADES),
+                new Card(Value.EIGHT, Suit.SPADES),
+                new Card(Value.SEVEN, Suit.SPADES),
+                new Card(Value.SIX, Suit.SPADES),
+        };
+
+        Assertions.assertEquals("Black wins. - with flush: ACE DIAMONDS", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
 }
