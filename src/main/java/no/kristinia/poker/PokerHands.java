@@ -7,16 +7,50 @@ import java.util.Map;
 public class PokerHands {
 
     public String checkWinner(Card[] blackHand, Card[] whiteHand) {
-        HashMap<Value, Integer> blackFrequency = new HashMap<>();
-        HashMap<Value, Integer> whiteFrequency = new HashMap<>();
+        HashMap<Value, Integer> blackValueFrequency = new HashMap<>();
+        HashMap<Value, Integer> whiteValueFrequency = new HashMap<>();
+
+        HashMap<Suit, Integer> blackSuitFrequency = new HashMap<>();
+        HashMap<Suit, Integer> whiteSuitFrequency = new HashMap<>();
 
         for (Card card : blackHand) {
-            blackFrequency.merge(card.value, 1, Integer::sum);
+            blackValueFrequency.merge(card.value, 1, Integer::sum);
+            blackSuitFrequency.merge(card.suit, 1, Integer::sum);
         }
         for (Card card : whiteHand) {
-            whiteFrequency.merge(card.value, 1, Integer::sum);
+            whiteValueFrequency.merge(card.value, 1, Integer::sum);
+            whiteSuitFrequency.merge(card.suit, 1, Integer::sum);
         }
+//      -- Flush --
+        if (blackSuitFrequency.size() == 1 || whiteSuitFrequency.size() == 1){
+            ArrayList<Value> blackValues = new ArrayList<>();
+            ArrayList<Value> whiteValues = new ArrayList<>();
 
+            for (Map.Entry<Value, Integer> freq : blackValueFrequency.entrySet()) {
+                blackValues.add(freq.getKey());
+            }
+            for (Map.Entry<Value, Integer> freq : whiteValueFrequency.entrySet()) {
+                whiteValues.add(freq.getKey());
+            }
+
+            blackValues.sort(null);
+            whiteValues.sort(null);
+
+            if (blackValues.get(4).compareTo(whiteValues.get(4)) > 0){
+                return "Black wins. - with flush: " + blackValues.get(4) + " " + blackSuitFrequency.keySet();
+            }
+            if (blackValues.get(4).compareTo(whiteValues.get(4)) < 0){
+                return "White wins. - with flush: " + whiteValues.get(4) + " " + whiteSuitFrequency.keySet();
+            }
+
+            /*
+            if (blackSuitFrequency.containsValue(5)){
+                return "Black wins. - with flush: " + blackSuitFrequency.keyS;
+            }
+
+             */
+
+        }
 
 
 //        --- Straight ---
@@ -30,7 +64,7 @@ public class PokerHands {
         *   saves the highest value of straight and compare to the other hand
         * */
         for (Value value : Value.values()) {
-            if (blackFrequency.containsKey(value)) {
+            if (blackValueFrequency.containsKey(value)) {
                 blackStraight++;
                 if (blackStraight == 5) {
                     blackStraightHigh =  value;
@@ -39,7 +73,7 @@ public class PokerHands {
                 blackStraight = 0;
             }
 
-            if (whiteFrequency.containsKey(value)) {
+            if (whiteValueFrequency.containsKey(value)) {
                 whiteStraight++;
                 if (whiteStraight == 5) {
                     whiteStraightHigh =  value;
@@ -67,33 +101,33 @@ public class PokerHands {
 
 
 //        --- Three of a kind ---
-        if (whiteFrequency.containsValue(3)||blackFrequency.containsValue(3)){
+        if (whiteValueFrequency.containsValue(3)||blackValueFrequency.containsValue(3)){
             Value blackThree = Value.TWO;
             Value whiteThree = Value.TWO;
 
-            for (Map.Entry<Value, Integer> freq : blackFrequency.entrySet()) {
+            for (Map.Entry<Value, Integer> freq : blackValueFrequency.entrySet()) {
                 if (freq.getValue() == 3 && freq.getKey().compareTo(blackThree) > 0){
                     blackThree = freq.getKey();
                 }
             }
 
-            for (Map.Entry<Value, Integer> freq : whiteFrequency.entrySet()) {
+            for (Map.Entry<Value, Integer> freq : whiteValueFrequency.entrySet()) {
                 if (freq.getValue() == 3 && freq.getKey().compareTo(whiteThree) > 0){
                     whiteThree = freq.getKey();
                 }
             }
 
-            if (blackFrequency.containsValue(3) && whiteFrequency.containsValue(3)){
+            if (blackValueFrequency.containsValue(3) && whiteValueFrequency.containsValue(3)){
                 if (blackThree.compareTo(whiteThree) > 0){
                     return "Black wins. - with three of a kind card: " + blackThree;
                 } else if (whiteThree.compareTo(blackThree) > 0) {
                     return "White wins. - with three of a kind card: " + whiteThree;
                 }
             }
-            else if(blackFrequency.containsValue(3)){
+            else if(blackValueFrequency.containsValue(3)){
                 return "Black wins. - with three of a kind card: " + blackThree;
             }
-            else if(whiteFrequency.containsValue(3)){
+            else if(whiteValueFrequency.containsValue(3)){
                 return "White wins. - with three of a kind card: " + whiteThree;
             }
         }
@@ -101,16 +135,16 @@ public class PokerHands {
 
 
 //        --- Pair ---
-        if (whiteFrequency.containsValue(2) || blackFrequency.containsValue(2)){
+        if (whiteValueFrequency.containsValue(2) || blackValueFrequency.containsValue(2)){
             var blackPairs = new ArrayList<Value>();
             var whitePairs = new ArrayList<Value>();
 
-            for (Map.Entry<Value, Integer> freq : blackFrequency.entrySet()) {
+            for (Map.Entry<Value, Integer> freq : blackValueFrequency.entrySet()) {
                 if (freq.getValue() == 2) {
                     blackPairs.add(freq.getKey());
                 }
             }
-            for (Map.Entry<Value, Integer> freq : whiteFrequency.entrySet()) {
+            for (Map.Entry<Value, Integer> freq : whiteValueFrequency.entrySet()) {
                 if (freq.getValue() == 2) {
                     whitePairs.add(freq.getKey());
                 }
@@ -152,10 +186,10 @@ public class PokerHands {
             }
 
 //            If only one hand has single pair
-            if (whiteFrequency.containsValue(2)){
+            if (whiteValueFrequency.containsValue(2)){
                 return "White wins. - with pair card: " + whitePairs.get(0);
             }
-            if (blackFrequency.containsValue(2)){
+            if (blackValueFrequency.containsValue(2)){
                 return "Black wins. - with pair card: " + blackPairs.get(0);
             }
         }
