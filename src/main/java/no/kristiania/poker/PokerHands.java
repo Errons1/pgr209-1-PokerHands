@@ -1,4 +1,4 @@
-package no.kristinia.poker;
+package no.kristiania.poker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
