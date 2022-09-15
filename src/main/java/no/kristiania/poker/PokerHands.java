@@ -21,6 +21,9 @@ public class PokerHands {
             whiteValueFrequency.merge(card.value, 1, Integer::sum);
             whiteSuitFrequency.merge(card.suit, 1, Integer::sum);
         }
+
+
+
 //      -- Flush --
         if (blackSuitFrequency.containsValue(5) || whiteSuitFrequency.containsValue(5)){
             ArrayList<Value> blackValues = new ArrayList<>();
@@ -39,7 +42,8 @@ public class PokerHands {
             if (blackSuitFrequency.containsValue(5) && !whiteSuitFrequency.containsValue(5)){
                 return "Black wins. - with flush: " + blackValues.get(blackValues.size() -1)
                         + " " + blackSuitFrequency.keySet().toArray()[0];
-            } else if (!blackSuitFrequency.containsValue(5) && whiteSuitFrequency.containsValue(5)) {
+            }
+            if (!blackSuitFrequency.containsValue(5) && whiteSuitFrequency.containsValue(5)) {
                 return "White wins. - with flush: " + whiteValues.get(whiteValues.size() -1)
                         + " " + whiteSuitFrequency.keySet().toArray()[0];
             }
@@ -88,16 +92,17 @@ public class PokerHands {
         if (!blackStraightHigh.equals(Value.TWO) || !whiteStraightHigh.equals(Value.TWO)) {
             if (blackStraightHigh.compareTo(whiteStraightHigh) > 0) {
                 return "Black wins. - with straight: " + blackStraightHigh;
-            } else if (blackStraightHigh.compareTo(whiteStraightHigh) < 0) {
+            }
+            if (blackStraightHigh.compareTo(whiteStraightHigh) < 0) {
                 return "White wins. - with straight: " + whiteStraightHigh;
             }
 
             if (!blackStraightHigh.equals(Value.TWO)) {
                 return "Black wins. - with straight: " + blackStraightHigh;
-
             } else {
                 return "White wins. - with straight: " + whiteStraightHigh;
             }
+
         }
 
 
@@ -122,14 +127,15 @@ public class PokerHands {
             if (blackValueFrequency.containsValue(3) && whiteValueFrequency.containsValue(3)){
                 if (blackThree.compareTo(whiteThree) > 0){
                     return "Black wins. - with three of a kind card: " + blackThree;
-                } else if (whiteThree.compareTo(blackThree) > 0) {
+                }
+                if (whiteThree.compareTo(blackThree) > 0) {
                     return "White wins. - with three of a kind card: " + whiteThree;
                 }
             }
-            else if(blackValueFrequency.containsValue(3)){
+            if(blackValueFrequency.containsValue(3)){
                 return "Black wins. - with three of a kind card: " + blackThree;
             }
-            else if(whiteValueFrequency.containsValue(3)){
+            if(whiteValueFrequency.containsValue(3)){
                 return "White wins. - with three of a kind card: " + whiteThree;
             }
         }
@@ -161,20 +167,25 @@ public class PokerHands {
 //                Checks the highest pair
                 if (blackPairs.get(1).compareTo(whitePairs.get(1)) > 0) {
                     return "Black wins. - with two pair card: " + blackPairs.get(1) + " and " + blackPairs.get(0);
-                }else if (blackPairs.get(1).compareTo(whitePairs.get(1)) < 0){
+                }
+                if (blackPairs.get(1).compareTo(whitePairs.get(1)) < 0){
                     return "White wins. - with two pair card: " + whitePairs.get(1) + " and " + whitePairs.get(0);
 
 //                If highest pair is tie. checks lower pair.
-                }else if (blackPairs.get(0).compareTo(whitePairs.get(0)) > 0) {
+                }
+                if (blackPairs.get(0).compareTo(whitePairs.get(0)) > 0) {
                     return "Black wins. - with two pair card: " + blackPairs.get(1) + " and " + blackPairs.get(0);
-                }else if (blackPairs.get(0).compareTo(whitePairs.get(0)) < 0) {
+                }
+                if (blackPairs.get(0).compareTo(whitePairs.get(0)) < 0) {
                     return "White wins. - with two pair card: " + whitePairs.get(1) + " and " + whitePairs.get(0);
                 }
 
 //            If only one hand has pair, pick winner
-            }else if (blackPairs.size() == 2) {
+            }
+            if (blackPairs.size() == 2) {
                 return "Black wins. - with pair card: " + blackPairs.get(1) + " and " + blackPairs.get(0);
-            }else if (whitePairs.size() == 2) {
+            }
+            if (whitePairs.size() == 2) {
                 return "White wins. - with pair card: " + whitePairs.get(1) + " and " + whitePairs.get(0);
             }
 
@@ -182,7 +193,8 @@ public class PokerHands {
             if (blackPairs.size() == 1 && whitePairs.size() == 1) {
                 if (blackPairs.get(0).compareTo(whitePairs.get(0)) > 0) {
                     return "Black wins. - with pair card: " + blackPairs.get(0);
-                }else if (blackPairs.get(0).compareTo(whitePairs.get(0)) < 0) {
+                }
+                if (blackPairs.get(0).compareTo(whitePairs.get(0)) < 0) {
                     return "White wins. - with pair card: " + whitePairs.get(0);
                 }
             }
@@ -212,7 +224,7 @@ public class PokerHands {
         if (blackHigh.value.compareTo(whiteHigh.value) > 0) {
             return "Black wins. - with high card: " + blackHigh.value;
         }
-        else if (blackHigh.value.compareTo(whiteHigh.value) < 0){
+        if (blackHigh.value.compareTo(whiteHigh.value) < 0){
             return "White wins. - with high card: " + whiteHigh.value;
         }
 
