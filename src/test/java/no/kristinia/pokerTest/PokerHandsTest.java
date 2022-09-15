@@ -108,7 +108,7 @@ public class PokerHandsTest {
                 new Card(Value.SIX, Suit.DIAMONDS),
         };
 
-        Assertions.assertEquals("White wins. - with pair card: FOUR", pokerHands.checkWinner(blackHand, whiteHand));
+        Assertions.assertEquals("White wins. - with pair card: FOUR and TWO", pokerHands.checkWinner(blackHand, whiteHand));
     }
 
     @Test

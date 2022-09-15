@@ -124,22 +124,22 @@ public class PokerHands {
 
 //                Checks the highest pair
                 if (blackPairs.get(1).compareTo(whitePairs.get(1)) > 0) {
-                    return "Black wins. - with pair card: " + blackPairs.get(1);
+                    return "Black wins. - with two pair cards: " + blackPairs.get(1) + " and " + blackPairs.get(0);
                 }else if (blackPairs.get(1).compareTo(whitePairs.get(1)) < 0){
-                    return "White wins. - with pair card: " + whitePairs.get(1);
+                    return "White wins. - with two pair cards: " + whitePairs.get(1) + " and " + whitePairs.get(0);
 
 //                If highest pair is tie. checks lower pair.
                 }else if (blackPairs.get(0).compareTo(whitePairs.get(0)) > 0) {
-                    return "Black wins. - with pair card: " + blackPairs.get(0);
+                    return "Black wins. - with two pair card: " + blackPairs.get(1) + " and " + blackPairs.get(0);
                 }else if (blackPairs.get(0).compareTo(whitePairs.get(0)) < 0) {
-                    return "White wins. - with pair card: " + whitePairs.get(0);
+                    return "White wins. - with two pair card: " + whitePairs.get(1) + " and " + whitePairs.get(0);
                 }
 
 //            If only one hand has pair, pick winner
             }else if (blackPairs.size() == 2) {
-                return "Black wins. - with pair card: " + blackPairs.get(1);
+                return "Black wins. - with pair card: " + blackPairs.get(1) + " and " + blackPairs.get(0);
             }else if (whitePairs.size() == 2) {
-                return "White wins. - with pair card: " + whitePairs.get(1);
+                return "White wins. - with pair card: " + whitePairs.get(1) + " and " + whitePairs.get(0);
             }
 
 //            Checks single pair
