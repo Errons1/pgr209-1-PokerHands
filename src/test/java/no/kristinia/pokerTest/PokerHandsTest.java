@@ -46,7 +46,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void oneHandHavePairTest() {
+    void singleHandHavePairTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -68,7 +68,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void bothHavePairTest() {
+    void bothHandsHavePairTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -90,7 +90,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void oneHandHasTwoPairTest() {
+    void singleHandHasTwoPairTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -112,7 +112,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void twoHandHasTwoPairTest() {
+    void bothHandsHasTwoPairTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -134,7 +134,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void oneHandHasTreeOfAKindTest() {
+    void singleHandHasTreeOfAKindTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -156,7 +156,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void bothHandHasTreeOfAKindTest() {
+    void bothHandsHasTreeOfAKindTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -177,7 +177,7 @@ public class PokerHandsTest {
         Assertions.assertEquals("Black wins. - with three of a kind card: KING", pokerHands.checkWinner(blackHand, whiteHand));
     }
     @Test
-    void oneHandHasStraightTest() {
+    void singleHandHasStraightTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -199,7 +199,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void twoHandHasStraightTest() {
+    void bothHandsHasStraightTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {
@@ -221,7 +221,7 @@ public class PokerHandsTest {
     }
 
     @Test
-    void oneHandHasFlushTest() {
+    void singleHandHasFlushTest() {
         PokerHands pokerHands = new PokerHands();
 
         Card[] blackHand = {

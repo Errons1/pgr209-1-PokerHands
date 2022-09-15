@@ -31,9 +31,9 @@ Når dere oppretter repository via Github Classroom linken på Canvas, vil det a
   * [x] Koden er sjekket inn på et repository på https://github.com/kristiania-pgr209-2021
   * [x] GitHub repository er private. Dere skal gi tilgang til de som gir code review
 * Github
-  * [ ] Dere har en Git branch som viser parprogrammering der dere sjekker inn annenhver gang
-  * [ ] Dere har merget pull en pull request fra ping-pong-branchen
-  * [ ] Dere har mottatt code review fra medstudenter på feedback-pull request
+  * [x] Dere har en Git branch som viser parprogrammering der dere sjekker inn annenhver gang
+  * [x] Dere har merget pull en pull request fra ping-pong-branchen
+  * [x] Dere har mottatt code review fra medstudenter på feedback-pull request
   * [x] `.idea`, `*.iml` og `target` er lagt til i .gitignore og ikke sjekket inn
   * [x] Github Actions rapporterer at 100% av testene kjører grønt
   * [ ] GitHub Actions skal ha `timeout` på bygget
@@ -41,10 +41,10 @@ Når dere oppretter repository via Github Classroom linken på Canvas, vil det a
 * Kode
   * [x] Koden skal være korrekt strukturert etter Maven sine standarder (koden skal ligge under `src/main/java` og tester under `src/test/java`)
   * [x] Klassene skal ligge i Java packages
-  * [ ] Koden inneholder en testklasse med 4-7 testmetoder
-  * [ ] Klassenavn, pakkenavn, metodenavn og variabelnavn skal følge Java-konvensjoner når det gjelder små og store bokstaver
-  * [ ] Koden skal være korrekt indentert
-  * [ ] Dersom dere har valgt en stor oppgave behøver dere ikke løse hele. 6-7 tester er tilstrekkelig
+  * [x] Koden inneholder en testklasse med 4-7 testmetoder
+  * [x] Klassenavn, pakkenavn, metodenavn og variabelnavn skal følge Java-konvensjoner når det gjelder små og store bokstaver
+  * [x] Koden skal være korrekt indentert
+  * [x] Dersom dere har valgt en stor oppgave behøver dere ikke løse hele. 6-7 tester er tilstrekkelig
 * README-fil
   * [ ] Link til video av parprogrammering
   * [x] Korrekt GitHub Actions status badge
