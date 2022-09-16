@@ -1,5 +1,7 @@
 [![Java CI with Maven](https://github.com/kristiania-pgr209-2022/pgr209-1-Errons1/actions/workflows/maven.yml/badge.svg)](https://github.com/kristiania-pgr209-2022/pgr209-1-Errons1/actions/workflows/maven.yml)
 
+[Parprogrammering video](https://www.youtube.com/watch?v=d1wqaGdO8uU)
+
 # Innlevering 1: Programmeringsferdigheter
 
 ## Oppgave
