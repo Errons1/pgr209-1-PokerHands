@@ -48,10 +48,10 @@ Når dere oppretter repository via Github Classroom linken på Canvas, vil det a
   * [x] Koden skal være korrekt indentert
   * [x] Dersom dere har valgt en stor oppgave behøver dere ikke løse hele. 6-7 tester er tilstrekkelig
 * README-fil
-  * [ ] Link til video av parprogrammering
+  * [x] Link til video av parprogrammering
   * [x] Korrekt GitHub Actions status badge
   * [ ] Link til code review dere har gjort for medstudenter med minst én issue fra hver av dere
 * Video av parprogrammering viser:
-  * [ ] Den som skriver en test gir koden til den andre for å få testen til å passere
-  * [ ] Begge skriver tester og begger får tester til å passere
-  * [ ] Dere gjør en liten refactoring med Ctrl-alt-shift-t (Windows)/ctrl-t (Mac)
+  * [x] Den som skriver en test gir koden til den andre for å få testen til å passere
+  * [x] Begge skriver tester og begger får tester til å passere
+  * [x] Dere gjør en liten refactoring med Ctrl-alt-shift-t (Windows)/ctrl-t (Mac)
